@@ -1,0 +1,58 @@
+# 🌱 GrowSnap
+
+**GrowSnap** es una aplicación que permite monitorear el crecimiento de una planta a través de fotografías capturadas por una cámara ESP32-CAM. Combina un backend ligero en Flask con un frontend moderno en React + TypeScript, utilizando Vite como entorno de desarrollo.
+
+## 📸 Descripción del proyecto
+
+Este sistema documenta el desarrollo de una planta mediante imágenes periódicas tomadas por un dispositivo **ESP32-CAM**, procesadas y almacenadas por el backend, y visualizadas en una interfaz web intuitiva. Ideal para proyectos educativos, monitoreo agrícola o simplemente para disfrutar del proceso natural de crecimiento.
+
+## 🧩 Tecnologías utilizadas
+
+### Backend
+- 🐍 [Flask](https://flask.palletsprojects.com/) — microframework en Python
+- 🐚 Entorno virtual con `venv`
+- 📦 API REST para recibir y servir imágenes
+
+### Frontend
+- ⚡ [Vite](https://vitejs.dev/) — entorno de desarrollo ultrarrápido
+- ⚛️ [React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/)
+- 🎨 Visualización de imágenes y métricas de crecimiento
+
+### Hardware
+- 📷 [ESP32-CAM](https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera/) — captura de imágenes
+- 📡 Comunicación vía HTTP con el backend
+
+## 🚀 Instalación
+
+### Backend (Flask)
+```bash
+python -m venv venv
+source venv/bin/activate  # o venv\Scripts\activate en Windows
+pip install -r requirements.txt
+flask run
+Frontend (Vite + React)
+bash
+cd frontend
+npm install
+npm run dev
+🛠️ Funcionalidades
+Captura automática de imágenes desde ESP32-CAM
+
+Almacenamiento y visualización cronológica
+
+Interfaz web para explorar el crecimiento
+
+Posibilidad de análisis visual en el futuro (por ejemplo, detección de hojas, altura estimada)
+
+📂 Estructura del proyecto
+GrowSnap/
+├── backend/
+│   ├── app.py
+│   └── static/uploads/
+├── frontend/
+│   ├── src/
+│   └── public/
+├── README.md
+└── requirements.txt
+📌 Estado del proyecto
+🚧 En desarrollo — se están integrando funcionalidades de visualización y mejoras en la comunicación con el ESP32-CAM.
