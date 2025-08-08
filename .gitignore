@@ -37,3 +37,6 @@ dist-ssr/
 
 # MacOS system files
 .DS_Store
+
+# Ignorar imágenes grandes o temporales en backend
+backend/*.jpg
