@@ -78,7 +78,9 @@ const HeroSection = () => {
               Bienvenido a Agrolab
             </h1>
             <p className="hero-paragraph" style={paragraphStyle}>
-              Una solución moderna para tus necesidades. Descubre todas las funcionalidades que tenemos preparadas para ti y comienza a transformar tu experiencia digital.
+              Una solución moderna para el monitoreo automático de plantas. 
+              Descubre todas las funcionalidades que tenemos preparadas para ti 
+              y comienza a transformar tu experiencia de cultivo digital.
             </p>
           </div>
 
