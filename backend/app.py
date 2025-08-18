@@ -8,14 +8,20 @@ from PIL import Image
 import firebase_admin
 from firebase_admin import credentials, db
 import math
+import os
+import json
 
 app = Flask(__name__)
 CORS(app)
 
-# Inicializar Firebase Admin SDK
-cred = credentials.Certificate('./esp32cam-3db20-firebase-adminsdk-fbsvc-d867f2a47d.json')
+# 🔹 Inicializar Firebase con variables de entorno
+cred_json = os.environ.get("FIREBASE_CREDENTIALS")
+if not cred_json:
+    raise Exception("FIREBASE_CREDENTIALS no está configurada en Render.")
+
+cred = credentials.Certificate(json.loads(cred_json))
 firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://esp32cam-3db20-default-rtdb.firebaseio.com/'
+    'databaseURL': os.environ.get("FIREBASE_DB_URL")
 })
 
 def medir_altura_planta_url(url, distancia_cm=24.4, fov_horizontal=62):
@@ -106,5 +112,7 @@ def crecimiento():
 
     return jsonify({'datos': resultados})
 
+# 🔹 Ajuste para Render (puerto dinámico)
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
