@@ -5,7 +5,7 @@ import { titleStyle, paragraphStyle } from '../../styles/commonStyles';
 const WhatIsAgrolab: React.FC = () => {
   const header = (
     <div className="flex align-items-center gap-2">
-      <span style={titleStyle}>¿Qué es Agrolab?</span>
+      <span style={titleStyle} className="mb-4"> ¿Qué es Agrolab?</span>
     </div>
   );
 

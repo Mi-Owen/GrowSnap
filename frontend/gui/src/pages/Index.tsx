@@ -1,7 +1,9 @@
 import React from "react";
 import GraficaCrecimiento from "../components/index/GraficaCrecimiento";
 import UltimaImagen from "../components/index/UltimaImagen";
+import ListaImagenes from "../components/index/ListaImagenes";
 import Navbar from "../components/Navbar";
+import { Accordion, AccordionTab } from "primereact/accordion";
 
 const Index = () => {
   const containerStyle: React.CSSProperties = {
@@ -13,17 +15,16 @@ const Index = () => {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
     gap: "2rem",
-    alignItems: "start", // Alinear al inicio para mejor control
+    alignItems: "start",
     maxWidth: "1400px",
     margin: "0 auto"
   };
 
   const columnStyle: React.CSSProperties = {
     width: "100%",
-    overflow: "hidden" // Prevenir desbordamiento
+    overflow: "hidden"
   };
 
-  // Media query para responsividad
   const responsiveStyle = `
     @media (max-width: 768px) {
       .dashboard-grid {
@@ -41,6 +42,9 @@ const Index = () => {
 
   return (
     <>
+    <br />
+    <br />
+    <br />
       <style>{responsiveStyle}</style>
       <div>
         <Navbar />
@@ -55,6 +59,15 @@ const Index = () => {
             <div style={columnStyle}>
               <UltimaImagen />
             </div>
+          </div>
+
+          {/* Desplegable con la lista de imágenes */}
+          <div style={{ marginTop: "2rem" }}>
+            <Accordion>
+              <AccordionTab header="Ver todas las imágenes">
+                <ListaImagenes />
+              </AccordionTab>
+            </Accordion>
           </div>
         </div>
       </div>

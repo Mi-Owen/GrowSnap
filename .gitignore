@@ -1,16 +1,33 @@
+# ======================
 # Backend - Python
+# ======================
 backend/__pycache__/
 backend/*.pyc
 backend/venv/
 backend/env/
 backend/.env
 
+# Ignorar credenciales JSON (ejemplo: Firebase)
+backend/*.json
+
+# Ignorar archivos de metadatos de Windows
+*.Zone.Identifier
+
+# ======================
 # Frontend - Node.js
+# ======================
 frontend/node_modules/
 frontend/dist/
 frontend/.env
 
+# Opcional: ignorar lockfiles si no quieres versionarlos
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ======================
 # Logs
+# ======================
 logs/
 *.log
 npm-debug.log*
@@ -19,13 +36,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Node.js general (por si alguna carpeta node_modules o dist están fuera)
+# ======================
+# Node.js general
+# ======================
 node_modules/
 dist/
 dist-ssr/
 *.local
 
+# ======================
 # Editor directories and files
+# ======================
 .vscode/
 !.vscode/extensions.json
 .idea/
@@ -35,8 +56,12 @@ dist-ssr/
 *.sln
 *.sw?
 
+# ======================
 # MacOS system files
+# ======================
 .DS_Store
 
+# ======================
 # Ignorar imágenes grandes o temporales en backend
+# ======================
 backend/*.jpg
